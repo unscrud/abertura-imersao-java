@@ -27,7 +27,8 @@ public class App {
         GeradorDeFigurinhas gerador = new GeradorDeFigurinhas();
         for (int i = 0; i < 10; i++) {
             Map<String, String> filme = listaDeFilmes.get(i);
-            String urlImagem = filme.get("image");
+            String urlImagem = filme.get("image")
+                    .replaceAll("(@+)(.*).jpg$", "$1.jpg");
             String titulo = filme.get("title");
             InputStream inputStream = new URL(urlImagem).openStream();
             String tituloSimples = titulo.replaceAll("[^a-zZ-Z1-9]", "");
