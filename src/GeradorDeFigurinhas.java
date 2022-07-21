@@ -11,12 +11,6 @@ import javax.imageio.ImageIO;
 
 public class GeradorDeFigurinhas {
     void cria(InputStream inputStream, String nomeDoArquivo) throws Exception {
-        // InputStream inputStream = new FileInputStream(new
-        // File("entrada/filme-maior.jpg"));
-        // InputStream inputStream = new URL(
-        // "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg")
-        // .openStream();
-
         // leitura da imagem
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
