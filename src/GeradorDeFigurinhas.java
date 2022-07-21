@@ -3,13 +3,22 @@ import java.awt.Graphics2D;
 import java.awt.Font;
 import java.awt.Color;
 import java.io.File;
+//import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 
 public class GeradorDeFigurinhas {
     void cria() throws Exception {
+        // InputStream inputStream = new FileInputStream(new
+        // File("entrada/filme-maior.jpg"));
+        InputStream inputStream = new URL(
+                "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg")
+                .openStream();
+
         // leitura da imagem
-        BufferedImage imagemOriginal = ImageIO.read(new File("entrada/filme-maior.jpg"));
+        BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
         // cria nova imagem em memória com transparência e com tamanho novo
         int largura = imagemOriginal.getWidth();
