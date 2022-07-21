@@ -10,12 +10,12 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 public class GeradorDeFigurinhas {
-    void cria() throws Exception {
+    void cria(InputStream inputStream, String nomeDoArquivo) throws Exception {
         // InputStream inputStream = new FileInputStream(new
         // File("entrada/filme-maior.jpg"));
-        InputStream inputStream = new URL(
-                "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg")
-                .openStream();
+        // InputStream inputStream = new URL(
+        // "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg")
+        // .openStream();
 
         // leitura da imagem
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
@@ -44,6 +44,6 @@ public class GeradorDeFigurinhas {
 
     public static void main(String[] args) throws Exception {
         var geradora = new GeradorDeFigurinhas();
-        geradora.cria();
+        // geradora.cria();
     }
 }
