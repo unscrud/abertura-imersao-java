@@ -1,11 +1,13 @@
 import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
+import java.awt.Font;
+import java.awt.Color;
 import java.io.File;
 
 import javax.imageio.ImageIO;
 
 public class GeradorDeFigurinhas {
-    void cria() throws Exception{
+    void cria() throws Exception {
         // leitura da imagem
         BufferedImage imagemOriginal = ImageIO.read(new File("entrada/filme-maior.jpg"));
 
@@ -13,13 +15,19 @@ public class GeradorDeFigurinhas {
         int largura = imagemOriginal.getWidth();
         int altura = imagemOriginal.getHeight();
         int novaAltura = altura + 200;
-        BufferedImage novaImagem= new BufferedImage(largura, novaAltura, BufferedImage.TRANSLUCENT);
+        BufferedImage novaImagem = new BufferedImage(largura, novaAltura, BufferedImage.TRANSLUCENT);
 
         // copiar a imagem original para nova imagem (em memória)
         Graphics2D graphics2d = (Graphics2D) novaImagem.getGraphics();
         graphics2d.drawImage(imagemOriginal, 0, 0, null);
 
+        // configurar o texto
+        Font fonte = new Font(Font.SANS_SERIF, Font.BOLD, 64);
+        graphics2d.setColor(Color.YELLOW);
+        graphics2d.setFont(fonte);
+
         // escrever uma frase na imagem
+        graphics2d.drawString("TOPZERA", 100, novaAltura - 100);
 
         // escrever a nova imagem em um arquivo
         ImageIO.write(novaImagem, "png", new File("saida/figurinha.png"));
