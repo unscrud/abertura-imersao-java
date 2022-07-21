@@ -11,7 +11,6 @@ import java.util.Map;
 public class App {
     public static void main(String[] args) throws Exception {
         // acessar url da API
-        // var url = "https://imdb-api.com/en/API/Top250Movies/chaveDaAPI";
         var url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
         URI uri = URI.create(url);
         var client = HttpClient.newHttpClient();
@@ -26,7 +25,8 @@ public class App {
 
         // exibir e manipular os dados
         GeradorDeFigurinhas gerador = new GeradorDeFigurinhas();
-        for (Map<String, String> filme : listaDeFilmes) {
+        for (int i = 0; i < 10; i++) {
+            Map<String, String> filme = listaDeFilmes.get(i);
             String urlImagem = filme.get("image");
             String titulo = filme.get("title");
             InputStream inputStream = new URL(urlImagem).openStream();
