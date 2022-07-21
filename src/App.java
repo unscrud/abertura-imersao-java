@@ -11,7 +11,8 @@ import java.util.Map;
 public class App {
     public static void main(String[] args) throws Exception {
         // acessar url da API
-        var url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
+        // var url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
+        var url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
         URI uri = URI.create(url);
         var client = HttpClient.newHttpClient();
         var request = HttpRequest.newBuilder(uri).build();
@@ -27,8 +28,10 @@ public class App {
         GeradorDeFigurinhas gerador = new GeradorDeFigurinhas();
         for (int i = 0; i < 10; i++) {
             Map<String, String> filme = listaDeFilmes.get(i);
-            String urlImagem = filme.get("image")
-                    .replaceAll("(@+)(.*).jpg$", "$1.jpg");
+            String urlImagem =
+                    // filme.get("image")
+                    filme.get("url")
+                            .replaceAll("(@+)(.*).jpg$", "$1.jpg");
             String titulo = filme.get("title");
             InputStream inputStream = new URL(urlImagem).openStream();
             String tituloSimples = titulo.replaceAll("[^a-zZ-Z1-9]", "");
