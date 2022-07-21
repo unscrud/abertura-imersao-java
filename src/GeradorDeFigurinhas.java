@@ -31,6 +31,6 @@ public class GeradorDeFigurinhas {
         graphics2d.drawString("TOPZERA", 100, novaAltura - 100);
 
         // escrever a nova imagem em um arquivo
-        ImageIO.write(novaImagem, "png", new File("saida/figurinha.png"));
+        ImageIO.write(novaImagem, "png", new File("saida/" + nomeDoArquivo));
     }
 }
