@@ -41,9 +41,4 @@ public class GeradorDeFigurinhas {
         // escrever a nova imagem em um arquivo
         ImageIO.write(novaImagem, "png", new File("saida/figurinha.png"));
     }
-
-    public static void main(String[] args) throws Exception {
-        var geradora = new GeradorDeFigurinhas();
-        // geradora.cria();
-    }
 }
