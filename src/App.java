@@ -4,6 +4,7 @@ import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -29,9 +30,14 @@ public class App {
             String urlImagem = filme.get("image");
             String titulo = filme.get("title");
             InputStream inputStream = new URL(urlImagem).openStream();
-            gerador.cria(inputStream, titulo + ".png");
+            String tituloSimples = titulo.replaceAll("[^a-zZ-Z1-9]", "");
+            if (tituloSimples.isEmpty()) {
+                tituloSimples = String.valueOf(Calendar.getInstance().getTimeInMillis());
+            }
+            String nomeDoArquivo = tituloSimples + ".png";
+            gerador.cria(inputStream, nomeDoArquivo);
 
-            System.out.println(titulo);
+            System.out.println(tituloSimples);
         }
     }
 }
