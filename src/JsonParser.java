@@ -5,12 +5,12 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class JsonParser {
+public final class JsonParser {
 
   private static final Pattern REGEX_ITEMS = Pattern.compile(".*\\[(.+)\\].*");
   private static final Pattern REGEX_ATRIBUTOS_JSON = Pattern.compile("\"(.+?)\":\"(.*?)\"");
 
-  public List<Map<String, String>> parse(String json) {
+  public static List<Map<String, String>> parse(String json) {
     Matcher matcher = REGEX_ITEMS.matcher(json);
     if (!matcher.find()) {
       throw new IllegalArgumentException("Não encontrou items.");
