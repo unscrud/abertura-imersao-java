@@ -1,4 +1,4 @@
-## Aula 1 da Imesão Alura
+## Aula 3 da Imesão Alura
 
 Geração de figurinhas com os pôsteres, aproveitando para melhorar nosso código com as refatorações necessárias para torná-lo mais flexível e fácil de entender.
 

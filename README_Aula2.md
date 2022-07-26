@@ -1,4 +1,4 @@
-## Aula 1 da Imesão Alura
+## Aula 2 da Imesão Alura
 
 Criação de um gerador de figurinhas explorando outras bibliotecas nativas do Java, para que possamos enviar por Whatsapp os nossos filmes preferidos!
 
